@@ -67,6 +67,7 @@
         const { createApp, ref, computed, watch, defineComponent } = Vue;
 
         const RootComponent = defineComponent({
+            components: { QrcodeStream },
             name: 'RootComponent',
             template: document.getElementById('app-template').innerHTML,
             setup() {
