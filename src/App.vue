@@ -238,7 +238,7 @@ function onError(err: any) {
 </script>
 
 <style scoped>
-#app {
+#appxx {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -248,7 +248,7 @@ function onError(err: any) {
 }
 
 .demo-container {
-  max-width: 800px;
+  /*max-width: 800px;*/
   margin: 0 auto;
   padding: 20px;
 }
