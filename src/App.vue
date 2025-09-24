@@ -3,13 +3,25 @@
     <h1>Vue QR Code Reader - Full Demo</h1>
     
     <div class="demo-container">
-      <p>
-        Modern mobile phones often have a variety of different cameras installed (e.g. front, rear,
-        wide-angle, infrared, desk-view). The one picked by default is sometimes not the best choice.
-        For more fine-grained control, you can select a camera by device constraints or by the device
-        ID:
+      <p class="error">{{ error }}</p>
 
-        <select v-model="selectedConstraints">
+      <p class="decode-result">
+        Last result: <b>{{ result }}</b>
+      </p>
+
+      <div class="camera-container">
+        <qrcode-stream
+          :constraints="selectedConstraints"
+          :track="trackFunctionSelected.value"
+          :formats="selectedBarcodeFormats"
+          @error="onError"
+          @detect="onDetect"
+          @camera-on="onCameraReady"
+        />
+      </div>
+
+      <p>
+        <select v-model="selectedConstraints" style="max-width: 100%">
           <option
             v-for="option in constraintOptions"
             :key="option.label"
@@ -53,23 +65,6 @@
           <label :for="option">{{ option }}</label>
         </span>
       </p>
-
-      <p class="error">{{ error }}</p>
-
-      <p class="decode-result">
-        Last result: <b>{{ result }}</b>
-      </p>
-
-      <div class="camera-container">
-        <qrcode-stream
-          :constraints="selectedConstraints"
-          :track="trackFunctionSelected.value"
-          :formats="selectedBarcodeFormats"
-          @error="onError"
-          @detect="onDetect"
-          @camera-on="onCameraReady"
-        />
-      </div>
     </div>
   </div>
 </template>
