@@ -191,7 +191,7 @@ const barcodeFormats = ref({
   databar_expanded: false,
   data_matrix: false,
   dx_film_edge: false,
-  ean_13: false,
+  ean_13: true,
   ean_8: false,
   itf: false,
   maxi_code: false,
@@ -238,19 +238,10 @@ function onError(err: any) {
 </script>
 
 <style scoped>
-#appxx {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
 .demo-container {
   /*max-width: 800px;*/
   margin: 0 auto;
-  padding: 20px;
+  /*padding: 20px;*/
 }
 
 .error {
